@@ -1,0 +1,72 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Edit Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: rgb(158, 71, 71); color: white;"> 
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="/">
+      
+          <!-- Logo and title -->
+          <img src="../static/images/logo.png" width="60" th:src="@{images/logo.png}"/>
+          Shaniya's Profile
+        </a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Edit</a>
+          </li>
+        </ul>
+      </nav>
+
+  <div class="container" style="margin-top: 100px;">
+    <div class="row no gutters">
+      
+      <!-- Profile picture and Picture Upload -->
+      <div class="col">
+        <p>Click on the text to edit!</p>
+        <img src="../static/images/fb_pic.jpg" width="300" height="300" th:src="@{images/fb_pic.jpg}" style="border-radius: 2%;"/>
+        <p>Click on the "Browse" button to upload a photo:</p>
+        
+        <form action="/upload"  method="post" enctype="multipart/form-data">
+            <input type="file" name="photo" /><br><br>
+            <label for="text">Some Desc</label>
+            <input type="text" name="desc" />
+            <input type="submit" />
+        </form> 
+      </div>
+      
+      <!-- Biography -->
+      <div class="col-8" style="margin-top: 40px;">
+        <div class="row bg-white text-dark">
+          <h2 contenteditable="true" class="name">Shaniya Malcolm</h2>
+          <p contenteditable="true" class="biography" style="padding-top: 10px;">Lorem ipsum dolor sit amet, 
+            consectetur adipiscing elit. In luctus fringilla tortor. 
+            Cras eget arcu enim. Etiam et libero id erat accumsan hendrerit. 
+            Morbi consequat lobortis lacus sed mattis. Nam fermentum felis ac orci euismod commodo. 
+            Maecenas sed odio ac leo sollicitudin vulputate vel nec metus. 
+            Proin consectetur felis sed leo mattis faucibus. 
+            Pellentesque ornare faucibus ornare. Sed aliquam accumsan sapien non mollis. 
+            Duis quis nunc at felis mollis egestas ac eleifend lectus. Donec rhoncus interdum euismod. 
+            Phasellus vehicula varius risus, at pulvinar odio maximus id.</p>
+        </div>
+        <div class="row">
+          <input type="submit" value="Update Profile">
+        </div>
+      </div> 
+    </div>
+  </div>
+</body>
+</html>
