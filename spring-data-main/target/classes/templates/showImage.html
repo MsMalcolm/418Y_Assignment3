@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Shaniya's Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: rgb(158, 71, 71); color: white;"> 
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+        <!-- Brand/logo -->
+        <a class="navbar-brand" href="/">
+        
+            <!-- Logo and title -->
+            <img src="../static/images/logo.png" width="60" th:src="@{images/logo.png}"/>
+            Shaniya's Profile
+        </a>
+        
+        <!-- Links -->
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="/home">Home</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="/login">Edit</a>
+            </li>
+        </ul>
+    </nav>
+    <p>Image uploaded:</p>
+    <img th:src="${imgSrc}" alt= "User photo">
+</body>
+</html>
