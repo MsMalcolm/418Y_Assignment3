@@ -96,7 +96,7 @@ public class MainController {
 		return new ModelAndView("home");
 	}
 
-	@PostMapping(value = "/upload")
+	@PostMapping(path = "/edit")
     public ModelAndView uploads3(@RequestParam("photo") MultipartFile image, @RequestParam(name = "desc") String desc) {
         ModelAndView returnPage = new ModelAndView();
         System.out.println("description      " + desc);
@@ -114,7 +114,7 @@ public class MainController {
 
             String imgSrc = "http://" + bucketName + ".s3.amazonaws.com/" + image.getOriginalFilename();
 
-            returnPage.setViewName("showImage");
+            returnPage.setViewName("edit");
             returnPage.addObject("name", desc);
             returnPage.addObject("imgSrc", imgSrc);
 
